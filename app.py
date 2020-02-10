@@ -51,7 +51,7 @@ def post_something():
 
     if(q1):
         return jsonify({
-                "Result": result
+                "Result": result,
                 "METHOD": "POST"
             })
     
