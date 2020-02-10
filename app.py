@@ -63,7 +63,7 @@ def post_something():
             "METHOD" : "POST"
         })
     elif q5:
-        q5_answers = ['This is a much longer message which we want to hide from people who may want to try and see what we are writing to each other!', 'Hello', 'This is a test sentence!', "Let's see if this is translated correctly", "Couldn't find good decryption"]
+        q5_answers = ['This is a much longer message which we want to hide from people who may want to try and see what we are writing to each other!', 'Hello', 'This is a test sentence!', "Let's see if this is translated correctly", "!!!!!"]
         result = calculate_result(q5_answers, q5)
         return jsonify({
             "Result" : result,
