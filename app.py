@@ -29,10 +29,18 @@ def respond():
 def post_something():
 
     q1 = request.form.to_dict(flat=False).get('q1')
-    
+    q2 = request.form.to_dict(flat=False).get('q2')
+
     if q1:
         q1_answers = ['F', 'j', 'c', 'Q']
         result = calculate_result(q1_answers, q1)
+        return jsonify({
+            "Result" : result,
+            "METHOD" : "POST"
+        })
+    elif q2:
+        q1_answers = ['V', 'r', 's', 'I']
+        result = calculate_result(q2_answers, q2)
         return jsonify({
             "Result" : result,
             "METHOD" : "POST"
