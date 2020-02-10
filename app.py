@@ -54,7 +54,7 @@ def calculate_result(actual_answers, student_answers):
     else:
         correct = len(actual_answers) - len(incorrect)
         total = len(actual_answers)
-        return f"You got {correct} out of {total}. You got the following tests wrong: {incorrect}."
+        return f"You got {correct} out of {total}.\n You failed the following tests: {incorrect}."
 
 # A welcome message to test our server
 @app.route('/')
