@@ -32,6 +32,8 @@ def post_something():
 
     q1 = request.form.get('q1')
     print(len(q1))
+    print(request.form)
+    print(request.form.to_dict(flat=False))
     # You can add the test cases you made in the previous function, but in our case here you are just testing the POST functionality
     if param:
         return jsonify({
