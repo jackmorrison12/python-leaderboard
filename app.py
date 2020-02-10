@@ -2,6 +2,8 @@
 from flask import Flask, request, jsonify
 app = Flask(__name__)
 
+results = []
+
 @app.route('/getmsg/', methods=['GET'])
 def respond():
     # Retrieve the name from url parameter
@@ -28,6 +30,7 @@ def respond():
 @app.route('/post/', methods=['POST'])
 def post_something():
 
+    name = request.form.to_dict(flat=False).get('name')
     q1 = request.form.to_dict(flat=False).get('q1')
     q2 = request.form.to_dict(flat=False).get('q2')
     q3 = request.form.to_dict(flat=False).get('q3')
@@ -37,6 +40,7 @@ def post_something():
     if q1:
         q1_answers = ['F', 'j', 'c', 'Q']
         result = calculate_result(q1_answers, q1)
+        results.append((name, result))
         return jsonify({
             "Result" : result,
             "METHOD" : "POST"
@@ -90,7 +94,7 @@ def calculate_result(actual_answers, student_answers):
 # A welcome message to test our server
 @app.route('/')
 def index():
-    return "<h1>Welcome to our server !!</h1>"
+    return f"<h1>Welcome to our server !!</h1> {results}"
 
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
