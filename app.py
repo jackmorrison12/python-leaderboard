@@ -35,6 +35,26 @@ def post_something():
     print(request.form)
     q1 = request.form.to_dict(flat=False).get('q1')
     print(q1)
+    
+    answers = ['F', 'j', 'c', 'Q']
+    incorrect = []
+    for i in range(len(q1)):
+        if q1[i] != answers[i]:
+            incorrect.append(i)
+
+    if len(incorrect) == 0:
+        result = "Well done - all correct!"
+    else:
+        correct = len(answers) - len(incorrect)
+        total = len(answers)
+        result = f"You got {correct} out of {total}. You got questions {incorrect} wrong."
+
+    if(q1):
+        return jsonify({
+                "Result": result
+                "METHOD": "POST"
+            })
+    
     # You can add the test cases you made in the previous function, but in our case here you are just testing the POST functionality
     if param:
         return jsonify({
