@@ -30,6 +30,9 @@ def post_something():
 
     q1 = request.form.to_dict(flat=False).get('q1')
     q2 = request.form.to_dict(flat=False).get('q2')
+    q3 = request.form.to_dict(flat=False).get('q3')
+    q4 = request.form.to_dict(flat=False).get('q4')
+    q5 = request.form.to_dict(flat=False).get('q5')
 
     if q1:
         q1_answers = ['F', 'j', 'c', 'Q']
