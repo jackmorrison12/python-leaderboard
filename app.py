@@ -29,6 +29,9 @@ def respond():
 def post_something():
     param = request.form.get('name')
     print(param)
+
+    q1 = request.form.get('q1')
+    print(q1)
     # You can add the test cases you made in the previous function, but in our case here you are just testing the POST functionality
     if param:
         return jsonify({
