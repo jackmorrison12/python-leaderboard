@@ -39,7 +39,7 @@ def post_something():
             "METHOD" : "POST"
         })
     elif q2:
-        q1_answers = ['V', 'r', 's', 'I']
+        q2_answers = ['V', 'r', 's', 'I']
         result = calculate_result(q2_answers, q2)
         return jsonify({
             "Result" : result,
