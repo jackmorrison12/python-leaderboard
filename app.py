@@ -40,11 +40,12 @@ def post_something():
     if q1:
         q1_answers = ['F', 'j', 'c', 'Q']
         (result, score)  = calculate_result(q1_answers, q1)
-        try:
-            results[name][0] = score
-        except:
-            results[name] = [0,0,0,0,0]
-            results[name][0] = score
+        if name:
+            try:
+                results[name][0] = score
+            except:
+                results[name] = [0,0,0,0,0]
+                results[name][0] = score
         return jsonify({
             "Result" : result,
             "METHOD" : "POST"
@@ -52,11 +53,12 @@ def post_something():
     elif q2:
         q2_answers = ['V', 'r', 's', 'I']
         (result, score)  = calculate_result(q2_answers, q2)
-        try:
-            results[name][1] = score
-        except:
-            results[name] = [0,0,0,0,0]
-            results[name][1] = score
+        if name:
+            try:
+                results[name][1] = score
+            except:
+                results[name] = [0,0,0,0,0]
+                results[name][1] = score
         return jsonify({
             "Result" : result,
             "METHOD" : "POST"
@@ -64,11 +66,12 @@ def post_something():
     elif q3:
         q3_answers = ['Khoor', 'Cqrb rb j cnbc bnwcnwln!', "Qjy'x xjj nk ymnx nx ywfsxqfyji htwwjhyqd", '!!!!!']
         (result, score) = calculate_result(q3_answers, q3)
-        try:
-            results[name][2] = score
-        except:
-            results[name] = [0,0,0,0,0]
-            results[name][2] = score
+        if name:
+            try:
+                results[name][2] = score
+            except:
+                results[name] = [0,0,0,0,0]
+                results[name][2] = score
         return jsonify({
             "Result" : result,
             "METHOD" : "POST"
@@ -76,11 +79,12 @@ def post_something():
     elif q4:
         q4_answers = ['Hello', 'This is a test sentence!', "Let's see if this is translated correctly", '!!!!!']
         (result, score)  = calculate_result(q4_answers, q4)
-        try:
-            results[name][3] = score
-        except:
-            results[name] = [0,0,0,0,0]
-            results[name][3] = score
+        if name:
+            try:
+                results[name][3] = score
+            except:
+                results[name] = [0,0,0,0,0]
+                results[name][3] = score
         return jsonify({
             "Result" : result,
             "METHOD" : "POST"
@@ -88,11 +92,12 @@ def post_something():
     elif q5:
         q5_answers = ['This is a much longer message which we want to hide from people who may want to try and see what we are writing to each other!', 'Hello', 'This is a test sentence!', "Let's see if this is translated correctly", "!!!!!"]
         (result, score)  = calculate_result(q5_answers, q5)
-        try:
-            results[name][4] = score
-        except:
-            results[name] = [0,0,0,0,0]
-            results[name][4] = score
+        if name:
+            try:
+                results[name][4] = score
+            except:
+                results[name] = [0,0,0,0,0]
+                results[name][4] = score
         return jsonify({
             "Result" : result,
             "METHOD" : "POST"
