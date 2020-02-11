@@ -2,7 +2,7 @@
 from flask import Flask, request, jsonify
 app = Flask(__name__)
 
-results = {}
+results = {"Jack":[0,0,0,0,0]}
 
 @app.route('/getmsg/', methods=['GET'])
 def respond():
@@ -43,7 +43,7 @@ def post_something():
         try:
             results[name][0] = score
         except:
-            results[name] = [0]*5
+            results[name] = [0,0,0,0,0]
             results[name][0] = score
         return jsonify({
             "Result" : result,
