@@ -125,7 +125,7 @@ def index():
     print(sorted_scores)
     result = "<table><tr><th>Name</th><th>Score</th></tr>"
     for k in sorted_scores:
-        result+= f"<tr><td>{k}</td><td>{sorted_scores[v]}</td></tr>"
+        result+= f"<tr><td>{k}</td><td>{sorted_scores[k]}</td></tr>"
     result += "</table>"
     return result
 
