@@ -118,7 +118,12 @@ def calculate_result(actual_answers, student_answers):
 # A welcome message to test our server
 @app.route('/')
 def index():
-    return f"<h1>Welcome to our server !!</h1> {results}"
+    scores = {}
+    for key in results:
+        scores[key] = sum(results[key])
+    sorted_scores = {k:scores[k] for k in sorted(scores)}
+
+    return f"<h1>Welcome to our server !!</h1> {sorted_scores}"
 
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
