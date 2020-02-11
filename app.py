@@ -30,7 +30,9 @@ def respond():
 @app.route('/post/', methods=['POST'])
 def post_something():
 
-    name = request.form.to_dict(flat=False).get('name')[0]
+    name = request.form.to_dict(flat=False).get('name')
+    if name:
+        name = name[0]
     q1 = request.form.to_dict(flat=False).get('q1')
     q2 = request.form.to_dict(flat=False).get('q2')
     q3 = request.form.to_dict(flat=False).get('q3')
