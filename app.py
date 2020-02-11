@@ -2,7 +2,7 @@
 from flask import Flask, request, jsonify
 app = Flask(__name__)
 
-results = []
+results = {}
 
 @app.route('/getmsg/', methods=['GET'])
 def respond():
@@ -39,36 +39,40 @@ def post_something():
 
     if q1:
         q1_answers = ['F', 'j', 'c', 'Q']
-        result = calculate_result(q1_answers, q1)
-        results.append((name, result))
+        (result, score)  = calculate_result(q1_answers, q1)
+        try:
+            results[name][0] = score
+        except:
+            results[name] = [0]*5
+            results[name][0] = score
         return jsonify({
             "Result" : result,
             "METHOD" : "POST"
         })
     elif q2:
         q2_answers = ['V', 'r', 's', 'I']
-        result = calculate_result(q2_answers, q2)
+        (result, score)  = calculate_result(q2_answers, q2)
         return jsonify({
             "Result" : result,
             "METHOD" : "POST"
         })
     elif q3:
         q3_answers = ['Khoor', 'Cqrb rb j cnbc bnwcnwln!', "Qjy'x xjj nk ymnx nx ywfsxqfyji htwwjhyqd", '!!!!!']
-        result = calculate_result(q3_answers, q3)
+        (result, score) = calculate_result(q3_answers, q3)
         return jsonify({
             "Result" : result,
             "METHOD" : "POST"
         })
     elif q4:
         q4_answers = ['Hello', 'This is a test sentence!', "Let's see if this is translated correctly", '!!!!!']
-        result = calculate_result(q4_answers, q4)
+        (result, score)  = calculate_result(q4_answers, q4)
         return jsonify({
             "Result" : result,
             "METHOD" : "POST"
         })
     elif q5:
         q5_answers = ['This is a much longer message which we want to hide from people who may want to try and see what we are writing to each other!', 'Hello', 'This is a test sentence!', "Let's see if this is translated correctly", "!!!!!"]
-        result = calculate_result(q5_answers, q5)
+        (result, score)  = calculate_result(q5_answers, q5)
         return jsonify({
             "Result" : result,
             "METHOD" : "POST"
@@ -85,11 +89,11 @@ def calculate_result(actual_answers, student_answers):
             incorrect.append(i + 1)
 
     if len(incorrect) == 0:
-        return "Well done - all correct!"
+        return ("Well done - all correct!", len(actual_answers))
     else:
         correct = len(actual_answers) - len(incorrect)
         total = len(actual_answers)
-        return f"You got {correct} out of {total}.\n You failed the following tests: {incorrect}."
+        return (f"You got {correct} out of {total}.\n You failed the following tests: {incorrect}.",correct)
 
 # A welcome message to test our server
 @app.route('/')
