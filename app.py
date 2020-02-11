@@ -122,10 +122,10 @@ def index():
     for key in results:
         scores[key] = sum(results[key])
     sorted_scores = {k: v for k, v in sorted(scores.items(), key=lambda item: item[1], reverse=True)}
-
+    print(sorted_scores)
     result = "<table><tr><th>Name</th><th>Score</th></tr>"
-    for k,v in sorted_scores:
-        result+= f"<tr><td>{k}</td><td>{v}</td></tr>"
+    for k in sorted_scores:
+        result+= f"<tr><td>{k}</td><td>{sorted_scores[v]}</td></tr>"
     result += "</table>"
     return result
 
