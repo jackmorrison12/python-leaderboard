@@ -121,7 +121,7 @@ def index():
     scores = {}
     for key in results:
         scores[key] = sum(results[key])
-    sorted_scores = {k:scores[k] for k in sorted(scores)}
+    sorted_scores = {k: v for k, v in sorted(scores.items(), key=lambda item: item[1])}
 
     return f"<h1>Welcome to our server !!</h1> {sorted_scores}"
 
