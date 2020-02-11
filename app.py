@@ -111,10 +111,7 @@ def calculate_result(actual_answers, student_answers):
 # A welcome message to test our server
 @app.route('/')
 def index():
-    scores = {}
-    for key in results:
-        scores[key] = sum(results[key])
-    sorted_scores = {k: v for k, v in sorted(scores.items(), key=lambda item: item[1], reverse=True)}
+    sorted_scores = {k: v for k, v in sorted(results.items(), key=lambda item: item[1], reverse=True)}
     print(sorted_scores)
     result = "<table><tr><th>Name</th><th>Score</th></tr>"
     for k in sorted_scores:
