@@ -51,7 +51,7 @@ def post_something():
             "METHOD" : "POST"
         })
     elif q2:
-        q2_answers = ['V', 'r', 's', 'I', '1', '1', 'e', 'k', 'F', '5']
+        q2_answers = ['V', 'r', 's', 'I', '1', '!', 'e', 'k', 'F', '5']
         (result, score)  = calculate_result(q2_answers, q2)
         if name:
             try:
