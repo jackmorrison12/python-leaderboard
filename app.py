@@ -38,7 +38,7 @@ def post_something():
     q5 = request.form.to_dict(flat=False).get('q5')
 
     if q1:
-        q1_answers = ['F', 'j', 'c', 'Q']
+        q1_answers = ['F', 'j', 'c', 'Q', '1', '!', 'u', 'q', 'V', '5']
         (result, score)  = calculate_result(q1_answers, q1)
         if name:
             try:
