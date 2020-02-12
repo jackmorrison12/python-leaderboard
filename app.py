@@ -64,7 +64,7 @@ def post_something():
             "METHOD" : "POST"
         })
     elif q3:
-        q3_answers = ['Khoor', 'Cqrb rb j cnbc bnwcnwln!', "Qjy'x xjj nk ymnx nx ywfsxqfyji htwwjhyqd", '!!!!!']
+        q3_answers = ['Khoor', 'Cqrb rb j cnbc bnwcnwln!', "Qjy'x xjj nk ymnx nx ywfsxqfyji htwwjhyqd", '!!!!!', '12345 Nyrk rsflk eldsvij?', 'Dr!c cryevn gybu', 'hJmZ oZnOn', 'q', 'ocz izso ozno dn zhkot', '']
         (result, score) = calculate_result(q3_answers, q3)
         if name:
             try:
@@ -77,7 +77,7 @@ def post_something():
             "METHOD" : "POST"
         })
     elif q4:
-        q4_answers = ['Hello', 'This is a test sentence!', "Let's see if this is translated correctly", '!!!!!']
+        q4_answers = ['Hello', 'This is a test sentence!', "Let's see if this is translated correctly", '!!!!!', '12345 What about numbers?', 'Th!s should work', 'mOrE tEsTs', 'a', 'the next test is empty', '']
         (result, score)  = calculate_result(q4_answers, q4)
         if name:
             try:
