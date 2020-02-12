@@ -128,7 +128,7 @@ def index():
         scores[key] = sum(results[key])
     sorted_scores = {k: v for k, v in sorted(scores.items(), key=lambda item: item[1], reverse=True)}
     print(sorted_scores)
-    result = "<table  style=\"width: 100%;text-align: center;font-size: 30px;\"><tr><th>Name</th><th>Score</th></tr>"
+    result = "<h1>Python Leaderboard</h1><table  style=\"width: 50%;text-align: center;font-size: 30px;\"><tr><th>Name</th><th>Score</th></tr>"
     for k in sorted_scores:
         result+= f"<tr><td>{k}</td><td>{sorted_scores[k]}</td></tr>"
     result += "</table>"
