@@ -107,6 +107,87 @@ def post_something():
             "ERROR": "Nothing found"
         })
 
+@app.route('/functions/', methods=['POST'])
+def functions():
+
+    name = request.form.to_dict(flat=False).get('name')[0]
+    q1 = request.form.to_dict(flat=False).get('q1')
+    q2 = request.form.to_dict(flat=False).get('q2')
+    q3 = request.form.to_dict(flat=False).get('q3')
+    q4 = request.form.to_dict(flat=False).get('q4')
+    q5 = request.form.to_dict(flat=False).get('q5')
+
+    if q1:
+        q1_answers = ['Hello World']
+        (result, score)  = calculate_result(q1_answers, q1)
+        if name:
+            try:
+                results[name][0] = score
+            except:
+                results[name] = [0,0,0,0,0]
+                results[name][0] = score
+        return jsonify({
+            "Result" : result,
+            "METHOD" : "POST"
+        })
+    elif q2:
+        q2_answers = ['V', 'r', 's', 'I', '1', '!', 'e', 'k', 'F', '5']
+        (result, score)  = calculate_result(q2_answers, q2)
+        if name:
+            try:
+                results[name][1] = score
+            except:
+                results[name] = [0,0,0,0,0]
+                results[name][1] = score
+        return jsonify({
+            "Result" : result,
+            "METHOD" : "POST"
+        })
+    elif q3:
+        q3_answers = ['Khoor', 'Cqrb rb j cnbc bnwcnwln!', "Qjy'x xjj nk ymnx nx ywfsxqfyji htwwjhyqd", '!!!!!', '12345 Nyrk rsflk eldsvij?', 'Dr!c cryevn gybu', 'hJmZ oZnOn', 'q', 'ocz izso ozno dn zhkot', '']
+        (result, score) = calculate_result(q3_answers, q3)
+        if name:
+            try:
+                results[name][2] = score
+            except:
+                results[name] = [0,0,0,0,0]
+                results[name][2] = score
+        return jsonify({
+            "Result" : result,
+            "METHOD" : "POST"
+        })
+    elif q4:
+        q4_answers = ['Hello', 'This is a test sentence!', "Let's see if this is translated correctly", '!!!!!', '12345 What about numbers?', 'Th!s should work', 'mOrE tEsTs', 'a', 'the next test is empty', '']
+        (result, score)  = calculate_result(q4_answers, q4)
+        if name:
+            try:
+                results[name][3] = score
+            except:
+                results[name] = [0,0,0,0,0]
+                results[name][3] = score
+        return jsonify({
+            "Result" : result,
+            "METHOD" : "POST"
+        })
+    elif q5:
+        q5_answers = ['This is a much longer message which we want to hide from people who may want to try and see what we are writing to each other!', 'Hello', 'This is a test sentence!', "Let's see if this is translated correctly", "!!!!!","12345 What about numbers?", "Th!s should work", "mOrE tEsTs", "a", "the next test is empty"]
+        (result, score)  = calculate_result(q5_answers, q5)
+        if name:
+            try:
+                results[name][4] = score
+            except:
+                results[name] = [0,0,0,0,0]
+                results[name][4] = score
+        return jsonify({
+            "Result" : result,
+            "METHOD" : "POST"
+        })
+    else:
+        return jsonify({
+            "ERROR": "Nothing found"
+        })
+
+
 def calculate_result(actual_answers, student_answers):
     incorrect = []
     for i in range(len(student_answers)):
