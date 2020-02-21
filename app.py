@@ -144,7 +144,7 @@ def functions():
             "METHOD" : "POST"
         })
     elif q3:
-        q3_answers = ['Khoor', 'Cqrb rb j cnbc bnwcnwln!', "Qjy'x xjj nk ymnx nx ywfsxqfyji htwwjhyqd", '!!!!!', '12345 Nyrk rsflk eldsvij?', 'Dr!c cryevn gybu', 'hJmZ oZnOn', 'q', 'ocz izso ozno dn zhkot', '']
+        q3_answers = ['3', '2', '0', '3', '0']
         (result, score) = calculate_result(q3_answers, q3)
         if name:
             try:
