@@ -117,9 +117,10 @@ def functions():
     q4 = request.form.to_dict(flat=False).get('q4')
     q5 = request.form.to_dict(flat=False).get('q5')
     q6 = request.form.to_dict(flat=False).get('q6')
-
-    # if name == "RESET_LEADERBOARD":
-    #     results = {}
+    
+    print(name)
+    if name == 'RESET_LEADERBOARD':
+        results = {}
 
     if q1:
         q1_answers = ['Hello World']
