@@ -44,7 +44,7 @@ def post_something():
             try:
                 results[name][0] = score
             except:
-                results[name] = [0,0,0,0,0]
+                results[name] = [0,0,0,0,0,0]
                 results[name][0] = score
         return jsonify({
             "Result" : result,
@@ -57,7 +57,7 @@ def post_something():
             try:
                 results[name][1] = score
             except:
-                results[name] = [0,0,0,0,0]
+                results[name] = [0,0,0,0,0,0]
                 results[name][1] = score
         return jsonify({
             "Result" : result,
@@ -70,7 +70,7 @@ def post_something():
             try:
                 results[name][2] = score
             except:
-                results[name] = [0,0,0,0,0]
+                results[name] = [0,0,0,0,0,0]
                 results[name][2] = score
         return jsonify({
             "Result" : result,
@@ -83,7 +83,7 @@ def post_something():
             try:
                 results[name][3] = score
             except:
-                results[name] = [0,0,0,0,0]
+                results[name] = [0,0,0,0,0,0]
                 results[name][3] = score
         return jsonify({
             "Result" : result,
@@ -96,7 +96,7 @@ def post_something():
             try:
                 results[name][4] = score
             except:
-                results[name] = [0,0,0,0,0]
+                results[name] = [0,0,0,0,0,0]
                 results[name][4] = score
         return jsonify({
             "Result" : result,
@@ -116,6 +116,7 @@ def functions():
     q3 = request.form.to_dict(flat=False).get('q3')
     q4 = request.form.to_dict(flat=False).get('q4')
     q5 = request.form.to_dict(flat=False).get('q5')
+    q6 = request.form.to_dict(flat=False).get('q6')
 
     if q1:
         q1_answers = ['Hello World']
@@ -124,7 +125,7 @@ def functions():
             try:
                 results[name][0] = score
             except:
-                results[name] = [0,0,0,0,0]
+                results[name] = [0,0,0,0,0,0]
                 results[name][0] = score
         return jsonify({
             "Result" : result,
@@ -137,7 +138,7 @@ def functions():
             try:
                 results[name][1] = score
             except:
-                results[name] = [0,0,0,0,0]
+                results[name] = [0,0,0,0,0,0]
                 results[name][1] = score
         return jsonify({
             "Result" : result,
@@ -150,7 +151,7 @@ def functions():
             try:
                 results[name][2] = score
             except:
-                results[name] = [0,0,0,0,0]
+                results[name] = [0,0,0,0,0,0]
                 results[name][2] = score
         return jsonify({
             "Result" : result,
@@ -163,7 +164,7 @@ def functions():
             try:
                 results[name][3] = score
             except:
-                results[name] = [0,0,0,0,0]
+                results[name] = [0,0,0,0,0,0]
                 results[name][3] = score
         return jsonify({
             "Result" : result,
@@ -176,8 +177,21 @@ def functions():
             try:
                 results[name][4] = score
             except:
-                results[name] = [0,0,0,0,0]
+                results[name] = [0,0,0,0,0,0]
                 results[name][4] = score
+        return jsonify({
+            "Result" : result,
+            "METHOD" : "POST"
+        })
+    elif q6:
+        q6_answers = ['1','4','4','0','0']
+        (result, score)  = calculate_result(q6_answers, q6)
+        if name:
+            try:
+                results[name][5] = score
+            except:
+                results[name] = [0,0,0,0,0,0]
+                results[name][5] = score
         return jsonify({
             "Result" : result,
             "METHOD" : "POST"
