@@ -170,6 +170,7 @@ def functions():
             "METHOD" : "POST"
         })
     elif q5:
+        print(q5)
         q5_answers = ['This is a much longer message which we want to hide from people who may want to try and see what we are writing to each other!', 'Hello', 'This is a test sentence!', "Let's see if this is translated correctly", "!!!!!","12345 What about numbers?", "Th!s should work", "mOrE tEsTs", "a", "the next test is empty"]
         (result, score)  = calculate_result(q5_answers, q5)
         if name:
