@@ -157,7 +157,7 @@ def functions():
             "METHOD" : "POST"
         })
     elif q4:
-        q4_answers = ['Hello', 'This is a test sentence!', "Let's see if this is translated correctly", '!!!!!', '12345 What about numbers?', 'Th!s should work', 'mOrE tEsTs', 'a', 'the next test is empty', '']
+        q4_answers = ['hll', 'cn y rmv ll f my vwls?', "Wht bt f  dd cptls?", 'R  JST PT N CPS LCK', '12345']
         (result, score)  = calculate_result(q4_answers, q4)
         if name:
             try:
