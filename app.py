@@ -109,7 +109,7 @@ def post_something():
 
 @app.route('/functions/', methods=['POST'])
 def functions():
-
+    global results
     name = request.form.to_dict(flat=False).get('name')[0]
     q1 = request.form.to_dict(flat=False).get('q1')
     q2 = request.form.to_dict(flat=False).get('q2')
