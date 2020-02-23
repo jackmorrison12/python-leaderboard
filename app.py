@@ -120,7 +120,7 @@ def functions():
     
     print(name)
     if name == 'RESET_LEADERBOARD':
-        print("here for some reason")
+        print("Resetting leaderboard")
         results = {}
         return jsonify({
             "ERROR": "Leaderboard wiped"
