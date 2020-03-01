@@ -255,7 +255,7 @@ def methods():
                 "METHOD" : "POST"
             })
         elif q3:
-            q3_answers = ['3', '2', '0', '3', '0']
+            q3_answers = [[1, 2, 3, 4], ['h', 'e', 'l', 'l', 'o'], ['Hi'], [1, 'Test'], [1, 1], ['Hey', 'There', '!'], ['Can you handle long strings?'], ['What about weird indices?'], [1, 2, 'Hi', 'a'], ['c', 'a', 't', 's']]
             (result, score) = calculate_result(q3_answers, q3)
             if name:
                 try:
