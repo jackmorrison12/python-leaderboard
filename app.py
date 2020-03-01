@@ -316,6 +316,9 @@ def calculate_result(actual_answers, student_answers):
     incorrect = []
     for i in range(len(student_answers)):
         if student_answers[i] != actual_answers[i]:
+            print("ERROR")
+            print("S:", student_answers[i])
+            print("A:", actual_answers[i])
             incorrect.append(i + 1)
 
     if len(incorrect) == 0:
