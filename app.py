@@ -209,6 +209,108 @@ def functions():
                 "ERROR": "Nothing found"
             })
 
+@app.route('/methods/', methods=['POST'])
+def methods():
+    global results
+    name = request.form.to_dict(flat=False).get('name')[0]
+    q1 = request.form.to_dict(flat=False).get('q1')
+    q2 = request.form.to_dict(flat=False).get('q2')
+    q3 = request.form.to_dict(flat=False).get('q3')
+    q4 = request.form.to_dict(flat=False).get('q4')
+    q5 = request.form.to_dict(flat=False).get('q5')
+    q6 = request.form.to_dict(flat=False).get('q6')
+    
+    print(name)
+    if name == 'RESET_LEADERBOARD':
+        print("Resetting leaderboard")
+        results = {}
+        return jsonify({
+            "ERROR": "Leaderboard wiped"
+        })
+    else:
+        if q1:
+            q1_answers = ['HELLO', 'TEST 2', 'WHAT IF IT`S ALREADY CAPITALISED?', 'OR BOTH?', '12345']
+            (result, score)  = calculate_result(q1_answers, q1)
+            if name:
+                try:
+                    results[name][0] = score
+                except:
+                    results[name] = [0,0,0,0,0,0]
+                    results[name][0] = score
+            return jsonify({
+                "Result" : result,
+                "METHOD" : "POST"
+            })
+        elif q2:
+            q2_answers = ['14', '0', '4', '56798', '38']
+            (result, score)  = calculate_result(q2_answers, q2)
+            if name:
+                try:
+                    results[name][1] = score
+                except:
+                    results[name] = [0,0,0,0,0,0]
+                    results[name][1] = score
+            return jsonify({
+                "Result" : result,
+                "METHOD" : "POST"
+            })
+        elif q3:
+            q3_answers = ['3', '2', '0', '3', '0']
+            (result, score) = calculate_result(q3_answers, q3)
+            if name:
+                try:
+                    results[name][2] = score
+                except:
+                    results[name] = [0,0,0,0,0,0]
+                    results[name][2] = score
+            return jsonify({
+                "Result" : result,
+                "METHOD" : "POST"
+            })
+        elif q4:
+            q4_answers = ['hll', 'cn y rmv ll f my vwls?', "Wht bt f  dd cptls?", 'R  JST PT N CPS LCK', '12345']
+            (result, score)  = calculate_result(q4_answers, q4)
+            if name:
+                try:
+                    results[name][3] = score
+                except:
+                    results[name] = [0,0,0,0,0,0]
+                    results[name][3] = score
+            return jsonify({
+                "Result" : result,
+                "METHOD" : "POST"
+            })
+        elif q5:
+            q5_answers = ['hll', 'rmv', 'my', 'vwls', 'Wht', 'bt', 'cptls?', 'CPS', 'LCK', '12345']
+            (result, score)  = calculate_result(q5_answers, q5)
+            if name:
+                try:
+                    results[name][4] = score
+                except:
+                    results[name] = [0,0,0,0,0,0]
+                    results[name][4] = score
+            return jsonify({
+                "Result" : result,
+                "METHOD" : "POST"
+            })
+        elif q6:
+            q6_answers = ['1','4','4','0','0']
+            (result, score)  = calculate_result(q6_answers, q6)
+            if name:
+                try:
+                    results[name][5] = score
+                except:
+                    results[name] = [0,0,0,0,0,0]
+                    results[name][5] = score
+            return jsonify({
+                "Result" : result,
+                "METHOD" : "POST"
+            })
+        else:
+            return jsonify({
+                "ERROR": "Nothing found"
+            })
+
 
 def calculate_result(actual_answers, student_answers):
     incorrect = []
