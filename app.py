@@ -242,7 +242,7 @@ def methods():
                 "METHOD" : "POST"
             })
         elif q2:
-            q2_answers = ['14', '0', '4', '56798', '38']
+            q2_answers = ['HELLO','hello!', 'WhAt AbOuT tHiS?', '', '12345']
             (result, score)  = calculate_result(q2_answers, q2)
             if name:
                 try:
