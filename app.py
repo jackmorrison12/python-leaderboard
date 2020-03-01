@@ -270,7 +270,7 @@ def methods():
                 "METHOD" : "POST"
             })
         elif q4:
-            q4_answers = ['True','True','False','True','True','True','False','False','False','False','False','False','False','False','False']
+            q4_answers =['olleh', 'hello', 'therehello', 'hellothere', '12345', 'h', '', 'b2a1', 'fInAl', 'well done!']
             (result, score)  = calculate_result(q4_answers, q4)
             if name:
                 try:
