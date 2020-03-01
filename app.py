@@ -270,7 +270,7 @@ def methods():
                 "METHOD" : "POST"
             })
         elif q4:
-            q4_answers = ['hll', 'cn y rmv ll f my vwls?', "Wht bt f  dd cptls?", 'R  JST PT N CPS LCK', '12345']
+            q4_answers = ['True','True','False','True','True','True','False','False','False','False','False','False','False','False','False']
             (result, score)  = calculate_result(q4_answers, q4)
             if name:
                 try:
@@ -283,7 +283,7 @@ def methods():
                 "METHOD" : "POST"
             })
         elif q5:
-            q5_answers = ['hll', 'rmv', 'my', 'vwls', 'Wht', 'bt', 'cptls?', 'CPS', 'LCK', '12345']
+            q5_answers = ['True','True','False','True','True','True','False','False','False','False','False','False','False','False','False']
             (result, score)  = calculate_result(q5_answers, q5)
             if name:
                 try:
