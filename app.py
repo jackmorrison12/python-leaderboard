@@ -229,7 +229,7 @@ def methods():
         })
     else:
         if q1:
-            q1_answers = ['HELLO', 'TEST 2', 'WHAT IF IT`S ALREADY CAPITALISED?', 'OR BOTH?', '12345']
+            q1_answers = ['HELLO', 'TEST 2', 'WHAT IF IT\'S ALREADY CAPITALISED?', 'OR BOTH?', '12345']
             (result, score)  = calculate_result(q1_answers, q1)
             if name:
                 try:
