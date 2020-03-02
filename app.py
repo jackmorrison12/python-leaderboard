@@ -285,7 +285,7 @@ def methods():
                 "METHOD" : "POST"
             })
         elif q5:
-            q5_answers = ['True','True','False','True','True','True','False','False','False','False','False','False','False','False','False']
+            q5_answers = ['True, True, False', 'True, True, True', 'False, False, False', 'False, False', 'False, False, False, False', '', 'False', 'False', 'False', 'True, False', 'True', 'False', 'False', 'True', 'False, True, True, False']
             (result, score)  = calculate_result(q5_answers, q5)
             if name:
                 try:
