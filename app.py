@@ -219,6 +219,8 @@ def methods():
     q4 = request.form.to_dict(flat=False).get('q4')
     q5 = request.form.to_dict(flat=False).get('q5')
     q6 = request.form.to_dict(flat=False).get('q6')
+    q7 = request.form.to_dict(flat=False).get('q7')
+    q8 = request.form.to_dict(flat=False).get('q8')
     
     print(name)
     if name == 'RESET_LEADERBOARD':
@@ -235,7 +237,7 @@ def methods():
                 try:
                     results[name][0] = score
                 except:
-                    results[name] = [0,0,0,0,0,0]
+                    results[name] = [0,0,0,0,0,0,0,0]
                     results[name][0] = score
             return jsonify({
                 "Result" : result,
@@ -248,7 +250,7 @@ def methods():
                 try:
                     results[name][1] = score
                 except:
-                    results[name] = [0,0,0,0,0,0]
+                    results[name] = [0,0,0,0,0,0,0,0]
                     results[name][1] = score
             return jsonify({
                 "Result" : result,
@@ -263,7 +265,7 @@ def methods():
                 try:
                     results[name][2] = score
                 except:
-                    results[name] = [0,0,0,0,0,0]
+                    results[name] = [0,0,0,0,0,0,0,0]
                     results[name][2] = score
             return jsonify({
                 "Result" : result,
@@ -276,7 +278,7 @@ def methods():
                 try:
                     results[name][3] = score
                 except:
-                    results[name] = [0,0,0,0,0,0]
+                    results[name] = [0,0,0,0,0,0,0,0]
                     results[name][3] = score
             return jsonify({
                 "Result" : result,
@@ -289,7 +291,7 @@ def methods():
                 try:
                     results[name][4] = score
                 except:
-                    results[name] = [0,0,0,0,0,0]
+                    results[name] = [0,0,0,0,0,0,0,0]
                     results[name][4] = score
             return jsonify({
                 "Result" : result,
@@ -302,8 +304,34 @@ def methods():
                 try:
                     results[name][5] = score
                 except:
-                    results[name] = [0,0,0,0,0,0]
+                    results[name] = [0,0,0,0,0,0,0,0]
                     results[name][5] = score
+            return jsonify({
+                "Result" : result,
+                "METHOD" : "POST"
+            })
+        elif q7:
+            q7_answers = ['0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0', '0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0', '0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0', '0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0', '1, 0, 0, 1, 5, 1, 4, 1, 4, 0, 0, 2, 0, 2, 2, 0, 0, 4, 3, 4, 0, 0, 0, 0, 0, 0', '0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0', '0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7', '0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7', '0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0', '0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0', '0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0', '2, 1, 3, 1, 5, 0, 2, 1, 2, 0, 1, 2, 0, 3, 3, 0, 0, 1, 1, 3, 2, 0, 0, 0, 1, 0', '0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0', '11, 0, 0, 10, 0, 10, 0, 10, 0, 11, 10, 11, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0', '50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0', '3, 0, 1, 1, 6, 0, 3, 5, 4, 0, 1, 3, 3, 5, 5, 0, 0, 1, 3, 7, 2, 0, 1, 0, 1, 0', '2, 0, 1, 0, 5, 4, 1, 1, 3, 0, 0, 2, 1, 1, 4, 0, 0, 3, 2, 2, 3, 0, 0, 0, 1, 0', '0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0', '1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1', '1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0']
+            (result, score)  = calculate_result(q7_answers, q7)
+            if name:
+                try:
+                    results[name][6] = score
+                except:
+                    results[name] = [0,0,0,0,0,0,0,0]
+                    results[name][6] = score
+            return jsonify({
+                "Result" : result,
+                "METHOD" : "POST"
+            })
+        elif q8:
+            q8_answers = ['329.0', '265.6', '147.0', '0', '239.86046511627907', '250.28571428571428', '366.0', '270.0', '151.5', '189.0', '108.0', '247.02439024390245', '232.0', '246.0', '243.95555555555555']
+            (result, score)  = calculate_result(q8_answers, q8)
+            if name:
+                try:
+                    results[name][7] = score
+                except:
+                    results[name] = [0,0,0,0,0,0,0,0]
+                    results[name][7] = score
             return jsonify({
                 "Result" : result,
                 "METHOD" : "POST"
