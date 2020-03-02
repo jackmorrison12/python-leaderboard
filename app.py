@@ -324,7 +324,7 @@ def methods():
                 "METHOD" : "POST"
             })
         elif q8:
-            q8_answers = ["'b', 'a'", "'b', 'a'", "'a', 'a'", "'a', 'a'", "'b', 'a'", "'b', 'a'", "'b', 'a'", "'b', 'a'", "'a', 'a'", "'a', 'a'", "'a', 'a'", "'a', 'b'", "'b', 'a'", "'a', 'b'", "'a', 'b'", "'b', 'a'", "'b', 'a'", "'a', 'a'", "'a', 'a'", "'a', 'b'"]
+            q8_answers = ["'t', 'a'", "'t', 'a'", "'a', 'a'", "'a', 'a'", "'e', 'b'", "'h', 'a'", "'z', 'a'", "'z', 'a'", "'a', 'a'", "'a', 'a'", "'a', 'a'", "'e', 'f'", "'e', 'a'", "'a', 'b'", "'a', 'b'", "'t', 'b'", "'e', 'b'", "'a', 'a'", "'a', 'a'", "'a', 'b'"]
             (result, score)  = calculate_result(q8_answers, q8)
             if name:
                 try:
